@@ -5,29 +5,82 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/gray"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/editTextText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Name"
+    <Button
+        android:id="@+id/virtualbackdrop"
+        android:layout_width="332dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="444dp"
+        android:backgroundTint="@color/blue"
+        android:fontFamily="@font/raleway_bold"
+        android:onClick="switchScreen"
+        android:shadowColor="@color/darkblue"
+        android:shadowRadius="100"
+        android:text="Virtual Backdrop"
+        android:textColor="@color/darkblue"
+        android:textSize="30dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/TitleCard"
+        android:layout_width="398dp"
+        android:layout_height="254dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/raleway_bold"
+        android:gravity="center"
+        android:text="20077
+        Scorer"
+        android:textSize="100dp"
+        android:textStyle="bold"
+        android:textColor="@color/lightblue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/ByIndubitables"
+        android:layout_width="400dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/raleway_bold"
+        android:gravity="center"
+        android:text="By The Indubitables | 20077"
+        android:textColor="@color/lightblue"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <Button
-        android:id="@+id/button5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:onClick="handleText"
-        android:text="Button"
+        android:id="@+id/scorematch"
+        android:layout_width="332dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="324dp"
+        android:backgroundTint="@color/blue"
+        android:fontFamily="@font/raleway_bold"
+        android:onClick="switchScreen"
+        android:text="Match Scoring"
+        android:textColor="@color/darkblue"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:shadowColor="@color/darkblue"
+        android:shadowRadius="100"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

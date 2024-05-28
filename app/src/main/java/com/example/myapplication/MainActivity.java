@@ -1,6 +1,6 @@
 package com.example.myapplication;
 
-import android.os.Bundle;
+import android.annotation.SuppressLint;import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
+    private boolean switchScreenPressed = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,19 +22,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void handleText(View v)
+    public void switchScreen(View v)
+    {
+        View view = findViewById(R.id.scorematch);
+        Button button = (Button) v;
+        setContentView(R.layout.score_main);
+    }
+
+
+
+
+    /*public void handleText(View v)
     {
         EditText t = findViewById(R.id.editTextText);
         String input = t.getText().toString();
 
         Log.d("info", input);
-    }
+    }*/
 
-    /*
-    public void toggle(View v)
-    {
-        findViewById(R.id.button4).setEnabled(false);
-        ((Button)findViewById(R.id.button4)).setText("New Disabled button");
-    }
-    */
+
 }
