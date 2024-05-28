@@ -22,11 +22,25 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void switchScreen(View v)
+    public void switchScreenToScore(View v)
     {
         View view = findViewById(R.id.scorematch);
         Button button = (Button) v;
         setContentView(R.layout.score_main);
+    }
+
+    public void switchScreenToBackdrop(View v)
+    {
+        View view = findViewById(R.id.scorematch);
+        Button button = (Button) v;
+        setContentView(R.layout.backdrop_main);
+    }
+
+    public void goBack(View v)
+    {
+        View view = findViewById(R.id.scorematch);
+        Button button = (Button) v;
+        setContentView(R.layout.activity_main);
     }
 
 
