@@ -7,7 +7,7 @@
     android:background="@color/gray">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/totalscore"
         android:layout_width="204dp"
         android:layout_height="41dp"
         android:layout_marginStart="24dp"
@@ -81,7 +81,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/backdropzone"
         android:layout_width="339dp"
         android:layout_height="33dp"
         android:layout_marginStart="36dp"
@@ -155,7 +155,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/parked"
         android:layout_width="342dp"
         android:layout_height="36dp"
         android:layout_marginStart="32dp"
@@ -286,7 +286,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/spikemark"
         android:layout_width="340dp"
         android:layout_height="31dp"
         android:layout_marginStart="32dp"
@@ -326,7 +326,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/backdroppixels"
         android:layout_width="342dp"
         android:layout_height="36dp"
         android:layout_marginStart="36dp"
@@ -340,7 +340,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/teamelement"
         android:layout_width="333dp"
         android:layout_height="30dp"
         android:layout_marginStart="24dp"
@@ -392,7 +392,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/bluepixelcounter"
         android:layout_width="32dp"
         android:layout_height="65dp"
         android:layout_marginTop="616dp"
@@ -419,7 +419,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/redpixelcounter"
         android:layout_width="32dp"
         android:layout_height="65dp"
         android:layout_marginTop="616dp"
