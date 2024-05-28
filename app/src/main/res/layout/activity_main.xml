@@ -86,13 +86,12 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="312dp"
-        android:layout_height="298dp"
-        android:layout_marginTop="228dp"
+        android:layout_width="217dp"
+        android:layout_height="260dp"
+        android:layout_marginTop="248dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/bluehat" />
+        app:srcCompat="@drawable/bluetophat" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
