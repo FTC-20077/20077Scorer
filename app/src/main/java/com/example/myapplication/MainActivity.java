@@ -5,11 +5,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Switch;
 import android.widget.TextView;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-
-
+import com.google.android.material.floatingactionbutton.*;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,9 +26,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void switchScreenToBackdrop(View v) {
-        View view = findViewById(R.id.scorematch);
+        View view = findViewById(R.id.virtualbackdrop);
         Button button = (Button) v;
         setContentView(R.layout.backdrop_main);
+    }
+
+    public void switchScreenToAuto(View v) {
+        View view = findViewById(R.id.auto);
+        Button button = (Button) v;
+        setContentView(R.layout.auto_main);
     }
 
 
@@ -58,7 +62,11 @@ public class MainActivity extends AppCompatActivity {
     Switch blueswitch6;
     Switch blueswitch7;
     Switch blueswitch8;
+    FloatingActionButton bluebackdroppixelcountplus;
 
+
+    // Counting
+    private int blueBackdropPixels = 0;
     //Declares the scores
     private int totalbluescore = 0;
     private int totalredscore = 0;
@@ -86,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
     public void goBack(View v) {
         View view = findViewById(R.id.scorematch);
         Button button = (Button) v;
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.score_main);
     }
 
     public void calculateScore(View v) {
@@ -261,6 +269,27 @@ public class MainActivity extends AppCompatActivity {
         totalblueparkscore = blueparkscorerobot1 + blueparkscorerobot2;
         totalredparkscore = redparkscorerobot1 + redparkscorerobot2;
     }
+
+
+    public void blueBackdropPixelAdd()
+    {
+        blueBackdropPixels++;
+        //updateAutoBackdropPixels();
+    }
+
+    public void blueBackdropPixelSubtract()
+    {
+        blueBackdropPixels -= 1;
+        updateAutoBackdropPixels();
+    }
+
+    public void updateAutoBackdropPixels() {
+        TextView totalScoreTextView = findViewById(R.id.bluebackdroppixelcount);
+        totalScoreTextView.setText(String.valueOf(blueBackdropPixels));
+    }
+
+
+
 
     public void calculateAutoScores() {
         totalbluescore = totalbluepurplescore + totalblueyellowscore + totalblueparkscore;
