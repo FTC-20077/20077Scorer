@@ -53,44 +53,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/redbackstagewhitepixelcountminus"
-        style="?attr/floatingActionButtonSmallStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginTop="748dp"
-        android:backgroundTint="@color/white"
-        android:rotationX="0"
-        android:scaleX="0.75"
-        android:scaleY="0.75"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.87"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/minus_icon"
-        app:tint="@color/red" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/redbackdropwhitepixelcountplus"
-        style="?attr/floatingActionButtonSmallStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginTop="632dp"
-        android:backgroundTint="@color/white"
-        android:onClick="switchScreenToBackdrop"
-        android:scaleX="0.75"
-        android:scaleY="0.75"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.644"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/plus_icon"
-        app:tint="@color/red" />
-
     <TextView
-        android:id="@+id/redalliancebackdroppixels"
+        android:id="@+id/redbackdrop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="612dp"
@@ -105,7 +69,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/bluebackstagepixelcount"
+        android:id="@+id/bluebackstagecount"
         android:layout_width="48dp"
         android:layout_height="50dp"
         android:layout_marginTop="744dp"
@@ -120,29 +84,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-
-        android:id="@+id/bluebackstagewhitepixelcountplus"
-        style="?attr/floatingActionButtonSmallStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginTop="748dp"
-        android:backgroundTint="@color/white"
-        android:scaleX="0.75"
-        android:scaleY="0.75"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.129"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/plus_icon"
-        app:tint="@color/blue" />
-
     <TextView
-        android:id="@+id/redalliancebackstagepixels"
+        android:id="@+id/redbackstage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="716dp"
+        android:layout_marginTop="724dp"
         android:fontFamily="@font/raleway_bold"
         android:text="Red Alliance"
         android:textColor="@color/red"
@@ -154,7 +100,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/bluealliancebackdroppixels"
+        android:id="@+id/bluebackdrop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="612dp"
@@ -169,7 +115,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/redbackdropwhitepixelcount"
+        android:id="@+id/redbackdropcount"
         android:layout_width="48dp"
         android:layout_height="50dp"
         android:layout_marginTop="632dp"
@@ -184,31 +130,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/bluebackdroppixelcountplus"
-        style="?attr/floatingActionButtonSmallStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginTop="632dp"
-        android:backgroundTint="@color/white"
-        android:onClick="goBack"
-        android:scaleX="0.75"
-        android:scaleY="0.75"
-        android:visibility="visible"
-        app:fabSize="mini"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.129"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/plus_icon"
-        app:tint="@color/blue" />
-
     <TextView
-        android:id="@+id/bluealliancebackstagepixels"
+        android:id="@+id/bluebackdrop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="728dp"
+        android:layout_marginTop="724dp"
         android:fontFamily="@font/raleway_bold"
         android:text="Blue Alliance"
         android:textColor="@color/blue"
@@ -219,44 +145,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/redbackdropwhitepixelcountminus"
-        style="?attr/floatingActionButtonSmallStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginTop="632dp"
-        android:backgroundTint="@color/white"
-        android:rotationX="0"
-        android:scaleX="0.75"
-        android:scaleY="0.75"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.87"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/minus_icon"
-        app:tint="@color/red" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/bluebackstagepixelcountminus"
-        style="?attr/floatingActionButtonSmallStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginTop="748dp"
-        android:backgroundTint="@color/white"
-        android:rotationX="0"
-        android:scaleX="0.75"
-        android:scaleY="0.75"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.355"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/minus_icon"
-        app:tint="@color/blue" />
-
     <TextView
-        android:id="@+id/redbackstagewhitepixelcount"
+        android:id="@+id/redbackstagecount"
         android:layout_width="48dp"
         android:layout_height="50dp"
         android:layout_marginTop="744dp"
@@ -270,42 +160,6 @@
         app:layout_constraintHorizontal_bias="0.76"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/redbackstagewhitepixelcountplus"
-        style="?attr/floatingActionButtonSmallStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginTop="748dp"
-        android:backgroundTint="@color/white"
-        android:scaleX="0.75"
-        android:scaleY="0.75"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.644"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/plus_icon"
-        app:tint="@color/red" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/bluebackdroppixelcountminus"
-        style="?attr/floatingActionButtonSmallStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginTop="632dp"
-        android:backgroundTint="@color/white"
-        android:rotationX="0"
-        android:scaleX="0.75"
-        android:scaleY="0.75"
-        android:onClick="blueBackdropPixelCheckerSubtract"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.355"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/minus_icon"
-        app:tint="@color/blue" />
 
     <TextView
         android:id="@+id/backstagepixels"
@@ -322,7 +176,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/bluebackdroppixelcount"
+        android:id="@+id/bluebackdropcount"
         android:layout_width="48dp"
         android:layout_height="50dp"
         android:layout_marginTop="632dp"
@@ -471,7 +325,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/backbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="800dp"
@@ -706,6 +560,102 @@
         app:layout_constraintHorizontal_bias="0.185"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/bluebackdropadd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="636dp"
+        android:onClick="blueBackdropPixelAdd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/plus_icon" />
+
+    <ImageButton
+        android:id="@+id/bluebackstageadd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="748dp"
+        android:onClick="blueBackstagePixelAdd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/plus_icon" />
+
+    <ImageButton
+        android:id="@+id/redbackdropadd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="636dp"
+        android:onClick="redBackdropPixelAdd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.628"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/plus_icon" />
+
+    <ImageButton
+        android:id="@+id/redbackstageadd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="748dp"
+        android:onClick="redBackstagePixelAdd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.628"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/plus_icon" />
+
+    <ImageButton
+        android:id="@+id/bluebackdropsubtract"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="636dp"
+        android:onClick="blueBackdropPixelSubtract"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.371"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/minus_icon" />
+
+    <ImageButton
+        android:id="@+id/bluebackstagesubtract"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="748dp"
+        android:onClick="blueBackstagePixelSubtract"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.371"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/minus_icon" />
+
+    <ImageButton
+        android:id="@+id/redbackdropsubtract"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="636dp"
+        android:onClick="redBackdropPixelSubtract"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.892"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/minus_icon" />
+
+    <ImageButton
+        android:id="@+id/redbackstagesubtract"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="748dp"
+        android:onClick="redBackstagePixelSubtract"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.892"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/minus_icon" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

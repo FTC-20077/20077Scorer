@@ -7,7 +7,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import com.google.android.material.floatingactionbutton.*;
+import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void switchScreenToAuto(View v) {
-        View view = findViewById(R.id.auto);
+        View view = findViewById(R.id.auto_main);
         Button button = (Button) v;
         setContentView(R.layout.auto_main);
     }
@@ -62,11 +62,18 @@ public class MainActivity extends AppCompatActivity {
     Switch blueswitch6;
     Switch blueswitch7;
     Switch blueswitch8;
-    FloatingActionButton bluebackdroppixelcountplus;
 
+    //Declares image buttons
+    ImageButton bluebackdropadd;
+    ImageButton bluebackdropsubtract;
+    ImageButton redbackdropadd;
+    ImageButton redbackdropsubtract;
 
     // Counting
     private int blueBackdropPixels = 0;
+    private int blueBackstagePixels = 0;
+    private int redBackstagePixels = 0;
+    private int redBackdropPixels = 0;
     //Declares the scores
     private int totalbluescore = 0;
     private int totalredscore = 0;
@@ -76,6 +83,10 @@ public class MainActivity extends AppCompatActivity {
     private int totalredyellowscore = 0;
     private int totalblueparkscore = 0;
     private int totalredparkscore = 0;
+    private int blueBackdropScore = 0;
+    private int redBackdropScore = 0;
+    private int blueBackstageScore = 0;
+    private int redBackstageScore = 0;
     private int bluepurplescorerobot1 = 0;
     private int bluepurplescorerobot2 = 0;
     private int redpurplescorerobot1 = 0;
@@ -90,11 +101,10 @@ public class MainActivity extends AppCompatActivity {
     private int redparkscorerobot2 = 0;
 
 
-
     public void goBack(View v) {
-        View view = findViewById(R.id.scorematch);
+        View view = findViewById(R.id.backbutton);
         Button button = (Button) v;
-        setContentView(R.layout.score_main);
+        setContentView(R.layout.activity_main);
     }
 
     public void calculateScore(View v) {
@@ -109,7 +119,8 @@ public class MainActivity extends AppCompatActivity {
         updateAutoBlueScore();
     }
 
-    public void teamElementChecker() {
+    public void teamElementChecker()
+    {
         blueswitch1 = (Switch) findViewById(R.id.blueswitch1);
         blueswitch2 = (Switch) findViewById(R.id.blueswitch2);
         redswitch1 = (Switch) findViewById(R.id.redswitch1);
@@ -152,7 +163,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void purplePixelChecker() {
+    public void purplePixelChecker()
+    {
         blueswitch3 = (Switch) findViewById(R.id.blueswitch3);
         redswitch3 = (Switch) findViewById(R.id.redswitch3);
         blueswitch4 = (Switch) findViewById(R.id.blueswitch4);
@@ -194,7 +206,8 @@ public class MainActivity extends AppCompatActivity {
         totalbluepurplescore = bluepurplescorerobot1 + bluepurplescorerobot2;
         totalredpurplescore = redpurplescorerobot1 + redpurplescorerobot2;
     }
-    public void yellowPixelChecker() {
+    public void yellowPixelChecker()
+    {
         blueswitch5 = (Switch) findViewById(R.id.blueswitch5);
         redswitch5 = (Switch) findViewById(R.id.redswitch5);
         blueswitch6 = (Switch) findViewById(R.id.blueswitch6);
@@ -236,7 +249,8 @@ public class MainActivity extends AppCompatActivity {
         totalblueyellowscore = blueyellowscorerobot1 + blueyellowscorerobot2;
         totalredyellowscore = redyellowscorerobot1 + redyellowscorerobot2;
     }
-    public void autoParkChecker() {
+    public void autoParkChecker()
+    {
         blueswitch7 = (Switch) findViewById(R.id.blueswitch7);
         redswitch7 = (Switch) findViewById(R.id.redswitch7);
         blueswitch8 = (Switch) findViewById(R.id.blueswitch8);
@@ -270,30 +284,124 @@ public class MainActivity extends AppCompatActivity {
         totalredparkscore = redparkscorerobot1 + redparkscorerobot2;
     }
 
-
-    public void blueBackdropPixelAdd()
+    public void blueBackdropPixelAdd(View v)
     {
-        blueBackdropPixels++;
-        //updateAutoBackdropPixels();
+        View view = findViewById(R.id.bluebackdropadd);
+        ImageButton imageButtonBDA = (ImageButton) v;
+        blueBackdropPixels += 1;
+
+        updateAutoBlueBackdropPixels();
     }
 
-    public void blueBackdropPixelSubtract()
+    public void blueBackdropPixelSubtract(View v)
     {
+        View view = findViewById(R.id.bluebackdropsubtract);
+        ImageButton imageButtonBDS = (ImageButton) v;
         blueBackdropPixels -= 1;
-        updateAutoBackdropPixels();
+
+        if (blueBackdropPixels <= 0) {
+            blueBackdropPixels = 0;
+        }
+
+        updateAutoBlueBackdropPixels();
     }
 
-    public void updateAutoBackdropPixels() {
-        TextView totalScoreTextView = findViewById(R.id.bluebackdroppixelcount);
+    public void redBackdropPixelAdd(View v)
+    {
+        View view = findViewById(R.id.redbackdropadd);
+        ImageButton imageButtonRDA = (ImageButton) v;
+        redBackdropPixels += 1;
+
+        updateAutoRedBackdropPixels();
+    }
+
+    public void redBackdropPixelSubtract(View v)
+    {
+        View view = findViewById(R.id.redbackdropsubtract);
+        ImageButton imageButtonRDS = (ImageButton) v;
+        redBackdropPixels -= 1;
+
+        if(redBackdropPixels <= 0) {
+            redBackdropPixels = 0;
+        }
+        updateAutoRedBackdropPixels();
+    }
+
+    public void blueBackstagePixelAdd(View v)
+    {
+        View view = findViewById(R.id.bluebackstageadd);
+        ImageButton imageButtonBSA = (ImageButton) v;
+
+        blueBackstagePixels += 1;
+        updateAutoBlueBackstagePixels();
+    }
+
+    public void blueBackstagePixelSubtract(View v)
+    {
+        View view = findViewById(R.id.bluebackstagesubtract);
+        ImageButton imageButtonBSS = (ImageButton) v;
+        blueBackstagePixels -= 1;
+
+        if(blueBackstagePixels <= 0) {
+            blueBackstagePixels = 0;
+        }
+        updateAutoBlueBackstagePixels();
+    }
+
+    public void redBackstagePixelAdd(View v)
+    {
+        View view = findViewById(R.id.redbackstageadd);
+        ImageButton imageButtonRSA = (ImageButton) v;
+
+        redBackstagePixels += 1;
+        updateAutoRedBackstagePixels();
+    }
+
+    public void redBackstagePixelSubtract(View v)
+    {
+        View view = findViewById(R.id.redbackstagesubtract);
+        ImageButton imageButtonRSS = (ImageButton) v;
+        redBackstagePixels -= 1;
+
+        if(redBackstagePixels <= 0) {
+            redBackstagePixels = 0;
+        }
+        updateAutoRedBackstagePixels();
+    }
+
+    public void updateAutoBlueBackdropPixels() {
+        TextView totalScoreTextView = findViewById(R.id.bluebackdropcount);
         totalScoreTextView.setText(String.valueOf(blueBackdropPixels));
+        blueBackdropScore = blueBackdropPixels * 5;
+        calculateAutoScores();
     }
 
+    public void updateAutoRedBackdropPixels() {
+        TextView totalScoreTextView = findViewById(R.id.redbackdropcount);
+        totalScoreTextView.setText(String.valueOf(redBackdropPixels));
+        redBackdropScore = redBackdropPixels * 5;
+        calculateAutoScores();
+    }
 
+    public void updateAutoBlueBackstagePixels() {
+        TextView totalScoreTextView = findViewById(R.id.bluebackstagecount);
+        totalScoreTextView.setText(String.valueOf(blueBackstagePixels));
+        blueBackstageScore = blueBackstagePixels * 3;
+        calculateAutoScores();
+    }
 
+    public void updateAutoRedBackstagePixels() {
+        TextView totalScoreTextView = findViewById(R.id.redbackstagecount);
+        totalScoreTextView.setText(String.valueOf(redBackstagePixels));
+        redBackstageScore = redBackstagePixels * 3;
+        calculateAutoScores();
+    }
 
     public void calculateAutoScores() {
-        totalbluescore = totalbluepurplescore + totalblueyellowscore + totalblueparkscore;
-        totalredscore = totalredpurplescore + totalredyellowscore + totalredparkscore;
+        totalbluescore = totalbluepurplescore + totalblueyellowscore + totalblueparkscore + blueBackdropScore + blueBackstageScore;
+        totalredscore = totalredpurplescore + totalredyellowscore + totalredparkscore + redBackdropScore + redBackstageScore;
+        updateAutoBlueScore();
+        updateAutoRedScore();
     }
 
     public void updateAutoRedScore() {
