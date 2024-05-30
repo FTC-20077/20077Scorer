@@ -181,6 +181,7 @@ public class MainActivity extends AppCompatActivity {
     public void goBackToScore(View v) {
         View view = findViewById(R.id.backbutton);
         Button button = (Button) v;
+        resetValues();
         setContentView(R.layout.score_main);
     }
 
@@ -1037,5 +1038,74 @@ public class MainActivity extends AppCompatActivity {
         totalScoreTextView.setText(String.valueOf(totalredscoreendgame));
     }
 
-    public void test(){}
+    public void resetValues(){
+        blueteamelelement1 = false;
+        blueteamelelement2 = false;
+        redteamelelement1 = false;
+        redteamelelement2 = false;
+        blueBackdropPixels = 0;
+        blueBackstagePixels = 0;
+        redBackstagePixels = 0;
+        redBackdropPixels = 0;
+        blueBackdropPixelsTeleOp = 0;
+        blueBackstagePixelsTeleOp = 0;
+        redBackstagePixelsTeleOp = 0;
+        redBackdropPixelsTeleOp = 0;
+        bluemosaics = 0;
+        redmosaics = 0;
+        bluesetlines = 0;
+        redsetlines = 0;
+        bluemajorpenalties = 0;
+        redmajorpenalties = 0;
+        blueminorpenalties = 0;
+        redminorpenalties = 0;
+        totalbluescore = 0;
+        totalredscore = 0;
+        totalbluescoreteleop = 0;
+        totalredscoreteleop = 0;
+        totalbluescoreendgame = 0;
+        totalredscoreendgame = 0;
+        totalbluepurplescore = 0;
+        totalredpurplescore = 0;
+        totalblueyellowscore = 0;
+        totalredyellowscore = 0;
+        totalblueparkscore = 0;
+        totalredparkscore = 0;
+        blueBackdropScore = 0;
+        redBackdropScore = 0;
+        blueBackstageScore = 0;
+        redBackstageScore = 0;
+        blueBackdropScoreTeleOp = 0;
+        redBackdropScoreTeleOp = 0;
+        blueBackstageScoreTeleOp = 0;
+        redBackstageScoreTeleOp = 0;
+        bluepurplescorerobot1 = 0;
+        bluepurplescorerobot2 = 0;
+        redpurplescorerobot1 = 0;
+        redpurplescorerobot2 = 0;
+        blueyellowscorerobot1 = 0;
+        blueyellowscorerobot2 = 0;
+        redyellowscorerobot1 = 0;
+        redyellowscorerobot2 = 0;
+        blueparkscorerobot1 = 0;
+        blueparkscorerobot2 = 0;
+        redparkscorerobot1 = 0;
+        redparkscorerobot2 = 0;
+        bluemosaicsscore = 0;
+        redmosaicsscore = 0;
+        bluesetlinesscore = 0;
+        redsetlinesscore = 0;
+        bluerobot1airplanescore = 0;
+        bluerobot2airplanescore = 0;
+        redrobot1airplanescore = 0;
+        redrobot2airplanescore = 0;
+        bluerobot1locationscore = 0;
+        bluerobot2locationscore = 0;
+        redrobot1locationscore = 0;
+        redrobot2locationscore = 0;
+        bluemajorpenaltiesscore = 0;
+        redmajorpenaltiesscore = 0;
+        blueminorpenaltiesscore = 0;
+        redminorpenaltiesscore = 0;
+    }
 }
