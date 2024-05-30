@@ -352,7 +352,6 @@ public class MainActivity extends AppCompatActivity {
 
         if(blueswitch7.isChecked()) {
             blueparkscorerobot1 = 5;
-            bluehangrobot1.setChecked(false);
         } else {
             blueparkscorerobot1 = 0;
         }
