@@ -2,65 +2,28 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/score_main"
+    android:id="@+id/score"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gray">
+
 
     <TextView
         android:id="@+id/TitleCard"
         android:layout_width="398dp"
         android:layout_height="254dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="24dp"
         android:fontFamily="@font/raleway_bold"
         android:gravity="center"
         android:text="Match
         Scorer"
+        android:textColor="@color/lightblue"
         android:textSize="100dp"
         android:textStyle="bold"
-        android:textColor="@color/lightblue"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.428"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <TextView
-        android:id="@+id/ByIndubitables"
-        android:layout_width="400dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="20dp"
-        android:fontFamily="@font/raleway_bold"
-        android:gravity="center"
-        android:text="By The Indubitables | 20077"
-        android:textColor="@color/lightblue"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.513"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/auto"
-        android:layout_width="332dp"
-        android:layout_height="98dp"
-        android:layout_marginTop="316dp"
-        android:backgroundTint="@color/blue"
-        android:fontFamily="@font/raleway_bold"
-        android:onClick="switchScreenToAuto"
-        android:shadowColor="@color/darkblue"
-        android:shadowRadius="100"
-        android:text="Autonomous"
-        android:textColor="@color/darkblue"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -68,7 +31,7 @@
         android:id="@+id/endgame"
         android:layout_width="332dp"
         android:layout_height="98dp"
-        android:layout_marginTop="548dp"
+        android:layout_marginTop="572dp"
         android:backgroundTint="@color/blue"
         android:fontFamily="@font/raleway_bold"
         android:onClick="switchScreenToEndgame"
@@ -79,7 +42,26 @@
         android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.455"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/auto"
+        android:layout_width="332dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="340dp"
+        android:backgroundTint="@color/blue"
+        android:fontFamily="@font/raleway_bold"
+        android:onClick="switchScreenToAuto"
+        android:shadowColor="@color/darkblue"
+        android:shadowRadius="100"
+        android:text="Autonomous"
+        android:textColor="@color/darkblue"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.455"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -87,7 +69,7 @@
         android:id="@+id/teleop"
         android:layout_width="332dp"
         android:layout_height="98dp"
-        android:layout_marginTop="432dp"
+        android:layout_marginTop="456dp"
         android:backgroundTint="@color/blue"
         android:fontFamily="@font/raleway_bold"
         android:onClick="switchScreenToTeleop"
@@ -98,7 +80,26 @@
         android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.455"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/backbutton"
+        android:layout_width="332dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="688dp"
+        android:backgroundTint="@color/blue"
+        android:fontFamily="@font/raleway_bold"
+        android:onClick="goBacktoMain"
+        android:shadowColor="@color/darkblue"
+        android:shadowRadius="100"
+        android:text="Back"
+        android:textColor="@color/darkblue"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.455"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

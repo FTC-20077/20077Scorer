@@ -20,23 +20,34 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void switchScreenToScore(View v) {
-        View view = findViewById(R.id.scorematch);
+        View view = findViewById(R.id.score);
         Button button = (Button) v;
         setContentView(R.layout.score_main);
     }
 
     public void switchScreenToBackdrop(View v) {
-        View view = findViewById(R.id.virtualbackdrop);
+        View view = findViewById(R.id.backdrop);
         Button button = (Button) v;
         setContentView(R.layout.backdrop_main);
     }
 
     public void switchScreenToAuto(View v) {
-        View view = findViewById(R.id.auto_main);
+        View view = findViewById(R.id.auto);
         Button button = (Button) v;
         setContentView(R.layout.auto_main);
     }
 
+    public void switchScreenToTeleop(View v) {
+        View view = findViewById(R.id.teleop);
+        Button button = (Button) v;
+        setContentView(R.layout.teleop_main);
+    }
+
+    public void switchScreenToEndgame(View v) {
+        View view = findViewById(R.id.endgame);
+        Button button = (Button) v;
+        setContentView(R.layout.endgame_main);
+    }
 
     /* Scorer */
     //Declares if team elements are selected
@@ -68,15 +79,30 @@ public class MainActivity extends AppCompatActivity {
     ImageButton bluebackdropsubtract;
     ImageButton redbackdropadd;
     ImageButton redbackdropsubtract;
+    ImageButton bluebackdropaddteleop;
+    ImageButton bluebackdropsubtractteleop;
+    ImageButton redbackdropaddteleop;
+    ImageButton redbackdropsubtractteleop;
 
     // Counting
     private int blueBackdropPixels = 0;
     private int blueBackstagePixels = 0;
     private int redBackstagePixels = 0;
     private int redBackdropPixels = 0;
+    private int blueBackdropPixelsTeleOp = 0;
+    private int blueBackstagePixelsTeleOp = 0;
+    private int redBackstagePixelsTeleOp = 0;
+    private int redBackdropPixelsTeleOp = 0;
+    private int bluemosaics = 0;
+    private int redmosaics = 0;
+    private int bluesetlines = 0;
+    private int redsetlines = 0;
+
     //Declares the scores
     private int totalbluescore = 0;
     private int totalredscore = 0;
+    private int totalbluescoreteleop = 0;
+    private int totalredscoreteleop = 0;
     private int totalbluepurplescore = 0;
     private int totalredpurplescore = 0;
     private int totalblueyellowscore = 0;
@@ -87,6 +113,10 @@ public class MainActivity extends AppCompatActivity {
     private int redBackdropScore = 0;
     private int blueBackstageScore = 0;
     private int redBackstageScore = 0;
+    private int blueBackdropScoreTeleOp = 0;
+    private int redBackdropScoreTeleOp = 0;
+    private int blueBackstageScoreTeleOp = 0;
+    private int redBackstageScoreTeleOp = 0;
     private int bluepurplescorerobot1 = 0;
     private int bluepurplescorerobot2 = 0;
     private int redpurplescorerobot1 = 0;
@@ -99,25 +129,51 @@ public class MainActivity extends AppCompatActivity {
     private int blueparkscorerobot2 = 0;
     private int redparkscorerobot1 = 0;
     private int redparkscorerobot2 = 0;
+    private int bluemosaicsscore = 0;
+    private int redmosaicsscore = 0;
+    private int bluesetlinesscore = 0;
+    private int redsetlinesscore = 0;
 
+    //Declares current page
+    private int currentPage = 0;
 
-    public void goBack(View v) {
+    public void nextPage(View v) {
+        View view = findViewById(R.id.nextpage);
+        Button button = (Button) v;
+        if (currentPage == 1) {
+            setContentView(R.layout.teleop_main);
+        } else if (currentPage == 2){
+            setContentView(R.layout.endgame_main);
+        } else if (currentPage == 3){
+            setContentView(R.layout.score_main);
+        }
+
+    }
+
+    public void goBackToScore(View v) {
         View view = findViewById(R.id.backbutton);
         Button button = (Button) v;
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.score_main);
     }
 
+    public void goBacktoMain(View v) {
+            View view = findViewById(R.id.backbutton);
+            Button button = (Button) v;
+            setContentView(R.layout.activity_main);
+        }
+
     public void calculateScore(View v) {
-        View view = findViewById(R.id.calulatebutton);
-        Button button = (Button) v;
-        teamElementChecker();
-        purplePixelChecker();
-        yellowPixelChecker();
-        autoParkChecker();
-        calculateAutoScores();
-        updateAutoRedScore();
-        updateAutoBlueScore();
-    }
+            View view = findViewById(R.id.bluebackdropsubtract);
+            Button button = (Button) v;
+            teamElementChecker();
+            purplePixelChecker();
+            yellowPixelChecker();
+            autoParkChecker();
+            calculateAutoScores();
+            updateAutoRedScore();
+            updateAutoBlueScore();
+        }
+
 
     public void teamElementChecker()
     {
@@ -369,6 +425,180 @@ public class MainActivity extends AppCompatActivity {
         updateAutoRedBackstagePixels();
     }
 
+    public void blueBackdropPixelAddTeleOp(View v)
+    {
+        View view = findViewById(R.id.bluebackdropaddteleop);
+        ImageButton imageButtonBDAT = (ImageButton) v;
+        blueBackdropPixelsTeleOp += 1;
+
+        updateTeleOpBlueBackdropPixels();
+    }
+
+    public void blueBackdropPixelSubtractTeleop(View v)
+    {
+        View view = findViewById(R.id.bluebackdropsubtractteleop);
+        ImageButton imageButtonBDST = (ImageButton) v;
+        blueBackdropPixelsTeleOp -= 1;
+
+        if (blueBackdropPixelsTeleOp <= 0) {
+            blueBackdropPixelsTeleOp = 0;
+        }
+
+        updateTeleOpBlueBackdropPixels();
+    }
+
+    public void redBackdropPixelAddTeleOp(View v)
+    {
+        View view = findViewById(R.id.redbackdropaddteleop);
+        ImageButton imageButtonBDAT = (ImageButton) v;
+        redBackdropPixelsTeleOp += 1;
+
+        updateTeleOpRedBackdropPixels();
+    }
+
+    public void redBackdropPixelSubtractTeleop(View v)
+    {
+        View view = findViewById(R.id.redbackdropsubtractteleop);
+        ImageButton imageButtonBDST = (ImageButton) v;
+        redBackdropPixelsTeleOp -= 1;
+
+        if (redBackdropPixelsTeleOp <= 0) {
+            redBackdropPixelsTeleOp = 0;
+        }
+
+        updateTeleOpRedBackdropPixels();
+    }
+
+    public void blueBackstagePixelAddTeleOp(View v)
+    {
+        View view = findViewById(R.id.bluebackstageaddteleop);
+        ImageButton imageButtonBDAT = (ImageButton) v;
+        blueBackstagePixelsTeleOp += 1;
+
+        updateTeleOpBlueBackstagePixels();
+    }
+
+    public void blueBackstagePixelSubtractTeleop(View v)
+    {
+        View view = findViewById(R.id.bluebackstagesubtractteleop);
+        ImageButton imageButtonBDST = (ImageButton) v;
+        blueBackstagePixelsTeleOp -= 1;
+
+        if (blueBackstagePixelsTeleOp <= 0) {
+            blueBackstagePixelsTeleOp = 0;
+        }
+
+        updateTeleOpBlueBackstagePixels();
+    }
+
+    public void redBackstagePixelAddTeleOp(View v)
+    {
+        View view = findViewById(R.id.redbackstageaddteleop);
+        ImageButton imageButtonBDAT = (ImageButton) v;
+        redBackstagePixelsTeleOp += 1;
+
+        updateTeleOpRedBackstagePixels();
+    }
+
+    public void redBackstagePixelSubtractTeleop(View v)
+    {
+        View view = findViewById(R.id.redbackstagesubtractteleop);
+        ImageButton imageButtonBDST = (ImageButton) v;
+        redBackstagePixelsTeleOp -= 1;
+
+        if (redBackstagePixelsTeleOp <= 0) {
+            redBackstagePixelsTeleOp = 0;
+        }
+
+        updateTeleOpRedBackstagePixels();
+    }
+
+    public void blueMosaicAdd(View v)
+    {
+        View view = findViewById(R.id.bluemosaicsaddteleop);
+        ImageButton imageButtonBDA = (ImageButton) v;
+        bluemosaics += 1;
+
+        updateBlueMosaics();
+    }
+
+    public void blueMosaicsSubtract(View v)
+    {
+        View view = findViewById(R.id.bluemosaicsubtractteleop);
+        ImageButton imageButtonBDS = (ImageButton) v;
+        bluemosaics -= 1;
+
+        if (bluemosaics <= 0) {
+            bluemosaics = 0;
+        }
+
+        updateBlueMosaics();
+    }
+
+    public void redMosaicsAdd(View v)
+    {
+        View view = findViewById(R.id.redmosaicaddteleop);
+        ImageButton imageButtonRDA = (ImageButton) v;
+        redmosaics += 1;
+
+        updateAutoRedBackdropPixels();
+    }
+
+    public void redMosaicsSubtract(View v)
+    {
+        View view = findViewById(R.id.redmosaicsubtractteleop);
+        ImageButton imageButtonRDS = (ImageButton) v;
+        redmosaics -= 1;
+
+        if(redmosaics <= 0) {
+            redmosaics = 0;
+        }
+        updateRedMosaics();
+    }
+
+    public void blueSetlinesAdd(View v)
+    {
+        View view = findViewById(R.id.bluesetlineaddteleop);
+        ImageButton imageButtonBDA = (ImageButton) v;
+        bluesetlines += 1;
+
+        updateBlueSetlines();
+    }
+
+    public void blueSetlinesSubtract(View v)
+    {
+        View view = findViewById(R.id.bluesetlinesubtractteleop);
+        ImageButton imageButtonBDS = (ImageButton) v;
+        bluesetlines -= 1;
+
+        if (bluesetlines <= 0) {
+            bluesetlines = 0;
+        }
+
+        updateBlueSetlines();
+    }
+
+    public void redSetlinesAdd(View v)
+    {
+        View view = findViewById(R.id.redsetlineaddteleop);
+        ImageButton imageButtonRDA = (ImageButton) v;
+        redsetlines += 1;
+
+        updateRedSetlines();
+    }
+
+    public void redSetlinesSubtract(View v)
+    {
+        View view = findViewById(R.id.redsetlinesubtractteleop);
+        ImageButton imageButtonRDS = (ImageButton) v;
+        redsetlines -= 1;
+
+        if(redsetlines <= 0) {
+            redsetlines = 0;
+        }
+        updateRedSetlines();
+    }
+
     public void updateAutoBlueBackdropPixels() {
         TextView totalScoreTextView = findViewById(R.id.bluebackdropcount);
         totalScoreTextView.setText(String.valueOf(blueBackdropPixels));
@@ -397,6 +627,64 @@ public class MainActivity extends AppCompatActivity {
         calculateAutoScores();
     }
 
+    public void updateTeleOpBlueBackdropPixels() {
+        TextView totalScoreTextView = findViewById(R.id.bluebackdropcountteleop);
+        totalScoreTextView.setText(String.valueOf(blueBackdropPixelsTeleOp));
+        blueBackdropScoreTeleOp = blueBackdropPixelsTeleOp * 3;
+        calculateTeleOpScores();
+    }
+
+    public void updateTeleOpRedBackdropPixels() {
+        TextView totalScoreTextView = findViewById(R.id.redbackdropcountteleop);
+        totalScoreTextView.setText(String.valueOf(redBackdropPixelsTeleOp));
+        redBackdropScoreTeleOp = redBackdropPixelsTeleOp * 3;
+        calculateTeleOpScores();
+    }
+
+    public void updateTeleOpBlueBackstagePixels() {
+        TextView totalScoreTextView = findViewById(R.id.bluebackstagecountteleop);
+        totalScoreTextView.setText(String.valueOf(blueBackstagePixelsTeleOp));
+        blueBackstageScoreTeleOp = blueBackstagePixelsTeleOp;
+        calculateTeleOpScores();
+    }
+
+    public void updateTeleOpRedBackstagePixels() {
+        TextView totalScoreTextView = findViewById(R.id.redbackstagecountteleop);
+        totalScoreTextView.setText(String.valueOf(redBackstagePixelsTeleOp));
+        redBackstageScoreTeleOp = redBackstagePixelsTeleOp;
+        calculateTeleOpScores();
+    }
+
+    public void updateBlueMosaics() {
+        TextView totalScoreTextView = findViewById(R.id.bluemosaiccountteleop);
+        totalScoreTextView.setText(String.valueOf(bluemosaics));
+        bluemosaicsscore = bluemosaics * 10;
+        calculateTeleOpScores();
+    }
+
+    public void updateRedMosaics() {
+        TextView totalScoreTextView = findViewById(R.id.redmosaiccountteleop);
+        totalScoreTextView.setText(String.valueOf(redmosaics));
+        redmosaicsscore = redmosaics * 10;
+        calculateTeleOpScores();
+    }
+
+    public void updateBlueSetlines() {
+        TextView totalScoreTextView = findViewById(R.id.bluemosaiccountteleop);
+        totalScoreTextView.setText(String.valueOf(bluesetlines));
+        bluesetlinesscore = bluesetlines * 10;
+        calculateTeleOpScores();
+    }
+
+    public void updateRedSetlines() {
+        TextView totalScoreTextView = findViewById(R.id.redmosaiccountteleop);
+        totalScoreTextView.setText(String.valueOf(redsetlines));
+        redsetlinesscore = redsetlines * 10;
+        calculateTeleOpScores();
+    }
+
+
+
     public void calculateAutoScores() {
         totalbluescore = totalbluepurplescore + totalblueyellowscore + totalblueparkscore + blueBackdropScore + blueBackstageScore;
         totalredscore = totalredpurplescore + totalredyellowscore + totalredparkscore + redBackdropScore + redBackstageScore;
@@ -404,6 +692,15 @@ public class MainActivity extends AppCompatActivity {
         updateAutoRedScore();
     }
 
+    public void calculateTeleOpScores() {
+        totalbluescoreteleop = blueBackdropScoreTeleOp + blueBackstageScoreTeleOp + bluemosaicsscore + bluesetlinesscore;
+        totalredscoreteleop = redBackdropScoreTeleOp + redBackstageScoreTeleOp + redmosaicsscore + redsetlinesscore;
+        updateTeleOpBlueScore();
+        updateTeleOpRedScore();
+
+    }
+
+    //Updates the scores
     public void updateAutoRedScore() {
         TextView totalScoreTextView = findViewById(R.id.redtotalscore);
         totalScoreTextView.setText(String.valueOf(totalredscore));
@@ -412,5 +709,15 @@ public class MainActivity extends AppCompatActivity {
     public void updateAutoBlueScore() {
         TextView totalScoreTextView = findViewById(R.id.bluetotalscore);
         totalScoreTextView.setText(String.valueOf(totalbluescore));
+    }
+
+    public void updateTeleOpBlueScore() {
+        TextView totalScoreTextView = findViewById(R.id.bluetotalscoreteleop);
+        totalScoreTextView.setText(String.valueOf(totalbluescoreteleop));
+    }
+
+    public void updateTeleOpRedScore() {
+        TextView totalScoreTextView = findViewById(R.id.redtotalscoreteleop);
+        totalScoreTextView.setText(String.valueOf(totalredscoreteleop));
     }
 }
