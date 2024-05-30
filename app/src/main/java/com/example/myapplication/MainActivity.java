@@ -1037,7 +1037,6 @@ public class MainActivity extends AppCompatActivity {
         TextView totalScoreTextView = findViewById(R.id.redtotalscoreendgame);
         totalScoreTextView.setText(String.valueOf(totalredscoreendgame));
     }
-
     public void resetValues(){
         blueteamelelement1 = false;
         blueteamelelement2 = false;
