@@ -21,5 +21,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/backdroppixels"
+        android:layout_width="333dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="156dp"
+        android:fontFamily="@font/raleway_medium"
+        android:text="Drone Zone:"
+        android:textColor="@color/white"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/backdroppixels"
+        android:layout_width="333dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="280dp"
+        android:fontFamily="@font/raleway_medium"
+        android:text="Penalties:"
+        android:textColor="@color/white"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 
