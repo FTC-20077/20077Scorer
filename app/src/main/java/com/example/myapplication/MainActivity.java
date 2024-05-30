@@ -73,6 +73,26 @@ public class MainActivity extends AppCompatActivity {
     Switch blueswitch6;
     Switch blueswitch7;
     Switch blueswitch8;
+    Switch blueparkrobot1;
+    Switch blueparkrobot2;
+    Switch bluehangrobot1;
+    Switch bluehangrobot2;
+    Switch redparkrobot1;
+    Switch redparkrobot2;
+    Switch redhangrobot1;
+    Switch redhangrobot2;
+    Switch blueairplanerobot1zone1;
+    Switch blueairplanerobot2zone1;
+    Switch redairplanerobot1zone1;
+    Switch redairplanerobot2zone1;
+    Switch blueairplanerobot1zone2;
+    Switch blueairplanerobot2zone2;
+    Switch redairplanerobot1zone2;
+    Switch redairplanerobot2zone2;
+    Switch blueairplanerobot1zone3;
+    Switch blueairplanerobot2zone3;
+    Switch redairplanerobot1zone3;
+    Switch redairplanerobot2zone3;
 
     // Counting
     private int blueBackdropPixels = 0;
@@ -87,26 +107,10 @@ public class MainActivity extends AppCompatActivity {
     private int redmosaics = 0;
     private int bluesetlines = 0;
     private int redsetlines = 0;
-    private int bluerobot1hang = 0;
-    private int redrobot1hang = 0;
-    private int bluerobot2hang = 0;
-    private int redrobot2hang = 0;
-    private int bluerobot1park = 0;
-    private int redrobot1park = 0;
-    private int bluerobot2park = 0;
-    private int redrobot2park = 0;
-    private int bluerobot1neither = 0;
-    private int redrobot1neither = 0;
-    private int bluerobot2neither = 0;
-    private int redrobot2neither = 0;
-    private int bluerobot1airplane = 0;
-    private int bluerobot2airplane = 0;
-    private int redrobot1airplane = 0;
-    private int redrobot2airplane = 0;
-    private int bluemajorpenalty = 0;
-    private int redmajorpenalty = 0;
-    private int blueminorpenalty = 0;
-    private int redminorpenalty = 0;
+    private int bluemajorpenalties = 0;
+    private int redmajorpenalties = 0;
+    private int blueminorpenalties = 0;
+    private int redminorpenalties = 0;
 
     //Declares the scores
     private int totalbluescore = 0;
@@ -149,10 +153,14 @@ public class MainActivity extends AppCompatActivity {
     private int bluerobot2airplanescore = 0;
     private int redrobot1airplanescore = 0;
     private int redrobot2airplanescore = 0;
-    private int bluemajorpenaltyscore = 0;
-    private int redmajorpenaltyscore = 0;
-    private int blueminorpenaltyscore = 0;
-    private int redminorpenaltyscore = 0;
+    private int bluerobot1locationscore = 0;
+    private int bluerobot2locationscore = 0;
+    private int redrobot1locationscore = 0;
+    private int redrobot2locationscore = 0;
+    private int bluemajorpenaltiesscore = 0;
+    private int redmajorpenaltiesscore = 0;
+    private int blueminorpenaltiesscore = 0;
+    private int redminorpenaltiesscore = 0;
 
     //Declares current page
     private int currentPage = 0;
@@ -193,6 +201,16 @@ public class MainActivity extends AppCompatActivity {
             updateAutoRedScore();
             updateAutoBlueScore();
         }
+
+    public void calculateScoreEndgame(View v) {
+        View view = findViewById(R.id.blueminorpenaltiesadd);
+        Button button = (Button) v;
+        endgameLocationChecker();
+        endgameAirplaneChecker();
+        calculateEndgameScores();
+        updateEndgameRedScore();
+        updateEndgameBlueScore();
+    }
 
 
     public void teamElementChecker()
@@ -334,6 +352,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(blueswitch7.isChecked()) {
             blueparkscorerobot1 = 5;
+            bluehangrobot1.setChecked(false);
         } else {
             blueparkscorerobot1 = 0;
         }
@@ -619,24 +638,240 @@ public class MainActivity extends AppCompatActivity {
         updateRedSetlines();
     }
 
-    public void blueRobot1HangingAdd(View v)
-    {
-        View view = findViewById(R.id.bluerobot1hangingadd);
-        ImageButton imageButtonBHA = (ImageButton) v;
-        bluerobot1hang += 1;
+    // --------------------------------------------- Endgame Section ----------------------------------------------------------------- //
 
-        if (bluerobot1hang <= 1) {
-            bluerobot1hang = 1;
+   public void endgameLocationChecker()
+        {
+            blueparkrobot1 = (Switch) findViewById(R.id.blueparkrobot1);
+            blueparkrobot2 = (Switch) findViewById(R.id.blueparkrobot2);
+            bluehangrobot1 = (Switch) findViewById(R.id.bluehangrobot1);
+            bluehangrobot2 = (Switch) findViewById(R.id.bluehangrobot2);
+            redparkrobot1 = (Switch) findViewById(R.id.redparkrobot1);
+            redparkrobot2 = (Switch) findViewById(R.id.redparkrobot2);
+            redhangrobot1 = (Switch) findViewById(R.id.redhangrobot1);
+            redhangrobot2 = (Switch) findViewById(R.id.redhangrobot2);
+
+            if(bluehangrobot1.isChecked()) {
+                bluerobot1locationscore = 20;
+                blueparkrobot1.setClickable(false);
+            } else if (blueparkrobot1.isChecked()) {
+                bluerobot1locationscore = 5;
+                bluehangrobot1.setClickable(false);
+            } else {
+                bluerobot1locationscore = 0;
+                bluehangrobot1.setClickable(true);
+                blueparkrobot1.setClickable(true);
+            }
+
+            if(bluehangrobot2.isChecked()) {
+                bluerobot2locationscore = 20;
+                blueparkrobot2.setClickable(false);
+            } else if (blueparkrobot2.isChecked()) {
+                bluerobot2locationscore = 5;
+                bluehangrobot2.setClickable(false);
+            } else {
+                bluerobot2locationscore = 0;
+                bluehangrobot2.setClickable(true);
+                blueparkrobot2.setClickable(true);
+            }
+
+            if(redhangrobot1.isChecked()) {
+                redrobot1locationscore = 20;
+                redparkrobot1.setClickable(false);
+            } else if (redparkrobot1.isChecked()) {
+                redrobot1locationscore = 5;
+                redhangrobot1.setClickable(false);
+            } else {
+                redrobot1locationscore = 0;
+                redhangrobot1.setClickable(true);
+                redparkrobot1.setClickable(true);
+            }
+
+            if(redhangrobot2.isChecked()) {
+                redrobot2locationscore = 20;
+                redparkrobot2.setClickable(false);
+            } else if (redparkrobot2.isChecked()) {
+                redrobot2locationscore = 5;
+                redhangrobot2.setClickable(false);
+            } else {
+                redrobot2locationscore = 0;
+                redhangrobot2.setClickable(true);
+                redparkrobot2.setClickable(true);
+            }
         }
 
-        if (bluerobot1hang <= 0) {
-            bluerobot1hang = 0;
+    public void endgameAirplaneChecker() {
+        blueairplanerobot1zone1 = (Switch) findViewById(R.id.blueairplanerobot1zone1);
+        blueairplanerobot1zone2 = (Switch) findViewById(R.id.blueairplanerobot1zone2);
+        blueairplanerobot1zone3 = (Switch) findViewById(R.id.blueairplanerobot1zone3);
+        blueairplanerobot2zone1 = (Switch) findViewById(R.id.blueairplanerobot2zone1);
+        blueairplanerobot2zone2 = (Switch) findViewById(R.id.blueairplanerobot2zone2);
+        blueairplanerobot2zone3 = (Switch) findViewById(R.id.blueairplanerobot2zone3);
+        redairplanerobot1zone1 = (Switch) findViewById(R.id.redairplanerobot1zone1);
+        redairplanerobot1zone2 = (Switch) findViewById(R.id.redairplanerobot1zone2);
+        redairplanerobot1zone3 = (Switch) findViewById(R.id.redairplanerobot1zone3);
+        redairplanerobot2zone1 = (Switch) findViewById(R.id.redairplanerobot2zone1);
+        redairplanerobot2zone2 = (Switch) findViewById(R.id.redairplanerobot2zone2);
+        redairplanerobot2zone3 = (Switch) findViewById(R.id.redairplanerobot2zone3);
+
+
+        if(blueairplanerobot1zone1.isChecked()) {
+            bluerobot1airplanescore = 30;
+            blueairplanerobot1zone2.setClickable(false);
+            blueairplanerobot1zone3.setClickable(false);
+        } else if (blueairplanerobot1zone2.isChecked()) {
+            bluerobot1airplanescore = 20;
+            blueairplanerobot1zone1.setClickable(false);
+            blueairplanerobot1zone3.setClickable(false);
+        } else if (blueairplanerobot1zone3.isChecked()) {
+            bluerobot1airplanescore = 10;
+            blueairplanerobot1zone1.setClickable(false);
+            blueairplanerobot1zone2.setClickable(false);
+        } else {
+            bluerobot1airplanescore = 0;
+            blueairplanerobot1zone1.setClickable(true);
+            blueairplanerobot1zone2.setClickable(true);
+            blueairplanerobot1zone3.setClickable(true);
         }
 
-        updateBlueRobot1Hanging();
+        if(blueairplanerobot2zone1.isChecked()) {
+            bluerobot2airplanescore = 30;
+            blueairplanerobot2zone2.setClickable(false);
+            blueairplanerobot2zone3.setClickable(false);
+        } else if (blueairplanerobot2zone2.isChecked()) {
+            bluerobot2airplanescore = 20;
+            blueairplanerobot2zone1.setClickable(false);
+            blueairplanerobot2zone3.setClickable(false);
+        } else if (blueairplanerobot2zone3.isChecked()) {
+            bluerobot2airplanescore = 10;
+            blueairplanerobot2zone1.setClickable(false);
+            blueairplanerobot2zone2.setClickable(false);
+        } else {
+            bluerobot2airplanescore = 0;
+            blueairplanerobot2zone1.setClickable(true);
+            blueairplanerobot2zone2.setClickable(true);
+            blueairplanerobot2zone3.setClickable(true);
+        }
+
+        if(redairplanerobot1zone1.isChecked()) {
+            redrobot1airplanescore = 30;
+            redairplanerobot1zone2.setClickable(false);
+            redairplanerobot1zone3.setClickable(false);
+        } else if (redairplanerobot1zone2.isChecked()) {
+            redrobot1airplanescore = 20;
+            redairplanerobot1zone1.setClickable(false);
+            redairplanerobot1zone3.setClickable(false);
+        } else if (redairplanerobot1zone3.isChecked()) {
+            redrobot1airplanescore = 10;
+            redairplanerobot1zone1.setClickable(false);
+            redairplanerobot1zone2.setClickable(false);
+        } else {
+            redrobot1airplanescore = 0;
+            redairplanerobot1zone1.setClickable(true);
+            redairplanerobot1zone2.setClickable(true);
+            redairplanerobot1zone3.setClickable(true);
+        }
+
+        if(redairplanerobot2zone1.isChecked()) {
+            redrobot2airplanescore = 30;
+            redairplanerobot2zone2.setClickable(false);
+            redairplanerobot2zone3.setClickable(false);
+        } else if (redairplanerobot2zone2.isChecked()) {
+            redrobot2airplanescore = 20;
+            redairplanerobot2zone1.setClickable(false);
+            redairplanerobot2zone3.setClickable(false);
+        } else if (redairplanerobot2zone3.isChecked()) {
+            redrobot2airplanescore = 10;
+            redairplanerobot2zone1.setClickable(false);
+            redairplanerobot2zone2.setClickable(false);
+        } else {
+            redrobot2airplanescore = 0;
+            redairplanerobot2zone1.setClickable(true);
+            redairplanerobot2zone2.setClickable(true);
+            redairplanerobot2zone3.setClickable(true);
+        }
+
     }
 
+    public void blueMajorPenaltiesAdd(View v) {
+        View view = findViewById(R.id.bluemajorpenaltiesadd);
+        ImageButton imageButtonBDA = (ImageButton) v;
+        bluemajorpenalties += 1;
 
+        updateBlueMajorPenalties();
+    }
+
+    public void blueMajorPenaltiesSubtract(View v) {
+        View view = findViewById(R.id.bluemajorpenaltiessubtract);
+        ImageButton imageButtonBDA = (ImageButton) v;
+        bluemajorpenalties -= 1;
+
+        if (bluemajorpenalties <= 0) {
+            bluemajorpenalties = 0;
+        }
+
+        updateBlueMajorPenalties();
+    }
+
+    public void redMajorPenaltiesAdd(View v) {
+        View view = findViewById(R.id.redmajorpenaltiesadd);
+        ImageButton imageButtonBDA = (ImageButton) v;
+        redmajorpenalties += 1;
+
+        updateRedMajorPenalties();
+    }
+
+    public void redMajorPenaltiesSubtract(View v) {
+        View view = findViewById(R.id.redmajorpenaltiessubtract);
+        ImageButton imageButtonBDA = (ImageButton) v;
+        redmajorpenalties -= 1;
+
+        if (redmajorpenalties <= 0) {
+            redmajorpenalties = 0;
+        }
+
+        updateRedMajorPenalties();
+    }
+
+    public void redMinorPenaltiesAdd(View v) {
+        View view = findViewById(R.id.redminorpenaltiesadd);
+        ImageButton imageButtonBDA = (ImageButton) v;
+        redminorpenalties += 1;
+
+        updateRedMinorPenalties();
+    }
+
+    public void redMinorPenaltiesSubtract(View v) {
+        View view = findViewById(R.id.redminorpenaltiessubtract);
+        ImageButton imageButtonBDA = (ImageButton) v;
+        redminorpenalties -= 1;
+
+        if (redminorpenalties <= 0) {
+            redminorpenalties = 0;
+        }
+
+        updateRedMinorPenalties();
+    }
+
+    public void blueMinorPenaltiesAdd(View v) {
+        View view = findViewById(R.id.blueminorpenaltiesadd);
+        ImageButton imageButtonBDA = (ImageButton) v;
+        blueminorpenalties += 1;
+
+        updateBlueMinorPenalties();
+    }
+
+    public void blueMinorPenaltiesSubtract(View v) {
+        View view = findViewById(R.id.blueminorpenaltiessubtract);
+        ImageButton imageButtonBDA = (ImageButton) v;
+        blueminorpenalties -= 1;
+
+        if (blueminorpenalties <= 0) {
+            blueminorpenalties = 0;
+        }
+
+        updateBlueMinorPenalties();
+    }
     public void updateAutoBlueBackdropPixels() {
         TextView totalScoreTextView = findViewById(R.id.bluebackdropcount);
         totalScoreTextView.setText(String.valueOf(blueBackdropPixels));
@@ -721,12 +956,33 @@ public class MainActivity extends AppCompatActivity {
         calculateTeleOpScores();
     }
 
-    public void updateBlueRobot1Hanging() {
-        bluerobot1hang = bluerobot1hang * 20;
+    public void updateRedMajorPenalties() {
+        TextView totalScoreTextView = findViewById(R.id.redmajorpenaltiescount);
+        totalScoreTextView.setText(String.valueOf(redmajorpenalties));
+        redmajorpenaltiesscore = redmajorpenalties * 30;
         calculateEndgameScores();
     }
 
+    public void updateBlueMajorPenalties() {
+        TextView totalScoreTextView = findViewById(R.id.bluemajorpenaltiescount);
+        totalScoreTextView.setText(String.valueOf(bluemajorpenalties));
+        bluemajorpenaltiesscore = bluemajorpenalties * 30;
+        calculateEndgameScores();
+    }
 
+    public void updateBlueMinorPenalties() {
+        TextView totalScoreTextView = findViewById(R.id.blueminorpenaltiescount);
+        totalScoreTextView.setText(String.valueOf(blueminorpenalties));
+        blueminorpenaltiesscore = blueminorpenalties * 10;
+        calculateEndgameScores();
+    }
+
+    public void updateRedMinorPenalties() {
+        TextView totalScoreTextView = findViewById(R.id.redminorpenaltiescount);
+        totalScoreTextView.setText(String.valueOf(redminorpenalties));
+        redminorpenaltiesscore = redminorpenalties * 10;
+        calculateEndgameScores();
+    }
 
     public void calculateAutoScores() {
         totalbluescore = totalbluepurplescore + totalblueyellowscore + totalblueparkscore + blueBackdropScore + blueBackstageScore;
@@ -744,8 +1000,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void calculateEndgameScores() {
-        totalbluescoreendgame = bluerobot1hang;
-        totalredscoreendgame = 0;
+        totalbluescoreendgame = blueminorpenaltiesscore + bluemajorpenaltiesscore + totalblueparkscore + bluerobot1locationscore + bluerobot2locationscore + bluerobot1airplanescore + bluerobot2airplanescore;
+        totalredscoreendgame = redminorpenaltiesscore + redmajorpenaltiesscore + totalredparkscore + redrobot1locationscore + redrobot2locationscore + redrobot1airplanescore + redrobot2airplanescore;
         updateEndgameBlueScore();
         updateEndgameRedScore();
 
@@ -781,4 +1037,6 @@ public class MainActivity extends AppCompatActivity {
         TextView totalScoreTextView = findViewById(R.id.redtotalscoreendgame);
         totalScoreTextView.setText(String.valueOf(totalredscoreendgame));
     }
+
+    public void test(){}
 }
