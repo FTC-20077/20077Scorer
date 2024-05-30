@@ -74,16 +74,6 @@ public class MainActivity extends AppCompatActivity {
     Switch blueswitch7;
     Switch blueswitch8;
 
-    //Declares image buttons
-    ImageButton bluebackdropadd;
-    ImageButton bluebackdropsubtract;
-    ImageButton redbackdropadd;
-    ImageButton redbackdropsubtract;
-    ImageButton bluebackdropaddteleop;
-    ImageButton bluebackdropsubtractteleop;
-    ImageButton redbackdropaddteleop;
-    ImageButton redbackdropsubtractteleop;
-
     // Counting
     private int blueBackdropPixels = 0;
     private int blueBackstagePixels = 0;
@@ -97,12 +87,34 @@ public class MainActivity extends AppCompatActivity {
     private int redmosaics = 0;
     private int bluesetlines = 0;
     private int redsetlines = 0;
+    private int bluerobot1hang = 0;
+    private int redrobot1hang = 0;
+    private int bluerobot2hang = 0;
+    private int redrobot2hang = 0;
+    private int bluerobot1park = 0;
+    private int redrobot1park = 0;
+    private int bluerobot2park = 0;
+    private int redrobot2park = 0;
+    private int bluerobot1neither = 0;
+    private int redrobot1neither = 0;
+    private int bluerobot2neither = 0;
+    private int redrobot2neither = 0;
+    private int bluerobot1airplane = 0;
+    private int bluerobot2airplane = 0;
+    private int redrobot1airplane = 0;
+    private int redrobot2airplane = 0;
+    private int bluemajorpenalty = 0;
+    private int redmajorpenalty = 0;
+    private int blueminorpenalty = 0;
+    private int redminorpenalty = 0;
 
     //Declares the scores
     private int totalbluescore = 0;
     private int totalredscore = 0;
     private int totalbluescoreteleop = 0;
     private int totalredscoreteleop = 0;
+    private int totalbluescoreendgame = 0;
+    private int totalredscoreendgame = 0;
     private int totalbluepurplescore = 0;
     private int totalredpurplescore = 0;
     private int totalblueyellowscore = 0;
@@ -133,6 +145,14 @@ public class MainActivity extends AppCompatActivity {
     private int redmosaicsscore = 0;
     private int bluesetlinesscore = 0;
     private int redsetlinesscore = 0;
+    private int bluerobot1airplanescore = 0;
+    private int bluerobot2airplanescore = 0;
+    private int redrobot1airplanescore = 0;
+    private int redrobot2airplanescore = 0;
+    private int bluemajorpenaltyscore = 0;
+    private int redmajorpenaltyscore = 0;
+    private int blueminorpenaltyscore = 0;
+    private int redminorpenaltyscore = 0;
 
     //Declares current page
     private int currentPage = 0;
@@ -599,6 +619,24 @@ public class MainActivity extends AppCompatActivity {
         updateRedSetlines();
     }
 
+    public void blueRobot1HangingAdd(View v)
+    {
+        View view = findViewById(R.id.bluerobot1hangingadd);
+        ImageButton imageButtonBHA = (ImageButton) v;
+        bluerobot1hang += 1;
+
+        if (bluerobot1hang <= 1) {
+            bluerobot1hang = 1;
+        }
+
+        if (bluerobot1hang <= 0) {
+            bluerobot1hang = 0;
+        }
+
+        updateBlueRobot1Hanging();
+    }
+
+
     public void updateAutoBlueBackdropPixels() {
         TextView totalScoreTextView = findViewById(R.id.bluebackdropcount);
         totalScoreTextView.setText(String.valueOf(blueBackdropPixels));
@@ -683,6 +721,11 @@ public class MainActivity extends AppCompatActivity {
         calculateTeleOpScores();
     }
 
+    public void updateBlueRobot1Hanging() {
+        bluerobot1hang = bluerobot1hang * 20;
+        calculateEndgameScores();
+    }
+
 
 
     public void calculateAutoScores() {
@@ -697,6 +740,14 @@ public class MainActivity extends AppCompatActivity {
         totalredscoreteleop = redBackdropScoreTeleOp + redBackstageScoreTeleOp + redmosaicsscore + redsetlinesscore;
         updateTeleOpBlueScore();
         updateTeleOpRedScore();
+
+    }
+
+    public void calculateEndgameScores() {
+        totalbluescoreendgame = bluerobot1hang;
+        totalredscoreendgame = 0;
+        updateEndgameBlueScore();
+        updateEndgameRedScore();
 
     }
 
@@ -719,5 +770,15 @@ public class MainActivity extends AppCompatActivity {
     public void updateTeleOpRedScore() {
         TextView totalScoreTextView = findViewById(R.id.redtotalscoreteleop);
         totalScoreTextView.setText(String.valueOf(totalredscoreteleop));
+    }
+
+    public void updateEndgameBlueScore() {
+        TextView totalScoreTextView = findViewById(R.id.bluetotalscoreendgame);
+        totalScoreTextView.setText(String.valueOf(totalbluescoreendgame));
+    }
+
+    public void updateEndgameRedScore() {
+        TextView totalScoreTextView = findViewById(R.id.redtotalscoreendgame);
+        totalScoreTextView.setText(String.valueOf(totalredscoreendgame));
     }
 }
