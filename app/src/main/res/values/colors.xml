@@ -9,5 +9,6 @@
     <color name="lightblue">#459de0</color>
     <color name="red">#D22B2B</color>
     <color name="darkred">#931515</color>
+    <color name="backdropgray">#242424</color>
 
 </resources>
