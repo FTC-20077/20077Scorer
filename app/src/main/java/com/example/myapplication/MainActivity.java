@@ -541,7 +541,7 @@ public class MainActivity extends AppCompatActivity {
         ImageButton imageButtonRDA = (ImageButton) v;
         redmosaics += 1;
 
-        updateAutoRedBackdropPixels();
+        updateRedMosaics();
     }
 
     public void redMosaicsSubtract(View v)
@@ -670,14 +670,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void updateBlueSetlines() {
-        TextView totalScoreTextView = findViewById(R.id.bluemosaiccountteleop);
+        TextView totalScoreTextView = findViewById(R.id.bluesetlineteleop);
         totalScoreTextView.setText(String.valueOf(bluesetlines));
         bluesetlinesscore = bluesetlines * 10;
         calculateTeleOpScores();
     }
 
     public void updateRedSetlines() {
-        TextView totalScoreTextView = findViewById(R.id.redmosaiccountteleop);
+        TextView totalScoreTextView = findViewById(R.id.redsetlineteleop);
         totalScoreTextView.setText(String.valueOf(redsetlines));
         redsetlinesscore = redsetlines * 10;
         calculateTeleOpScores();
