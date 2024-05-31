@@ -1039,8 +1039,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void calculateEndgameScores() {
-        totalbluescoreendgame = blueminorpenaltiesscore + bluemajorpenaltiesscore + bluerobot1locationscore + bluerobot2locationscore + bluerobot1airplanescore + bluerobot2airplanescore + totalbluescoreteleop;
-        totalredscoreautoendgame = redminorpenaltiesscore + redmajorpenaltiesscore + redrobot1locationscore + redrobot2locationscore + redrobot1airplanescore + redrobot2airplanescore + totalredscoreteleop;
+        totalbluescoreendgame = redminorpenaltiesscore + redmajorpenaltiesscore + bluerobot1locationscore + bluerobot2locationscore + bluerobot1airplanescore + bluerobot2airplanescore + totalbluescoreteleop;
+        totalredscoreautoendgame = blueminorpenaltiesscore + bluemajorpenaltiesscore + redrobot1locationscore + redrobot2locationscore + redrobot1airplanescore + redrobot2airplanescore + totalredscoreteleop;
         updateEndgameBlueScore();
         updateEndgameRedScore();
 
