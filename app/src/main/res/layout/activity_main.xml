@@ -8,25 +8,6 @@
     android:background="@color/gray"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/virtualbackdrop"
-        android:layout_width="332dp"
-        android:layout_height="98dp"
-        android:layout_marginTop="620dp"
-        android:backgroundTint="@color/blue"
-        android:fontFamily="@font/raleway_bold"
-        android:onClick="switchScreenToBackdrop"
-        android:shadowColor="@color/darkblue"
-        android:shadowRadius="100"
-        android:text="Virtual Backdrop"
-        android:textColor="@color/darkblue"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.607"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/TitleCard"
         android:layout_width="398dp"

@@ -26,12 +26,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.score_main);
     }
 
-    public void switchScreenToBackdrop(View v) {
-        View view = findViewById(R.id.backdrop);
-        Button button = (Button) v;
-        setContentView(R.layout.backdrop_main);
-    }
-
     public void switchScreenToAuto(View v) {
         View view = findViewById(R.id.auto);
         Button button = (Button) v;
@@ -164,7 +158,6 @@ public class MainActivity extends AppCompatActivity {
     private int redmajorpenaltiesscore = 0;
     private int blueminorpenaltiesscore = 0;
     private int redminorpenaltiesscore = 0;
-    private int selectedImageResource;
 
     //Declares current page
     private int currentPage = 0;
