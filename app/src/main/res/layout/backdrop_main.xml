@@ -1,8 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/backdrop"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backdropgray">
+
+    <Button
+        android:id="@+id/backbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="800dp"
+        android:backgroundTint="@color/blue"
+        android:onClick="goBackToScore"
+        android:text="Back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="379dp"
+        android:layout_height="674dp"
+        app:srcCompat="@drawable/backdrop_background"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <ImageView
+        android:id="@+id/yellowpixel"
+        android:layout_width="74dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="700dp"
+        android:onClick="priorityColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.409"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/yellowpixel" />
+
+    <ImageView
+        android:id="@+id/purplepixel"
+        android:layout_width="74dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="700dp"
+        android:onClick="priorityColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.629"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/purplepixel" />
+
+    <ImageView
+        android:id="@+id/whitepixel"
+        android:layout_width="74dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="700dp"
+        android:onClick="priorityColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.189"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/whitepixel" />
+
+    <ImageView
+        android:id="@+id/greenpixel"
+        android:layout_width="74dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="536dp"
+        android:onClick="priorityColor"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.103"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/greenpixel" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="29dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="552dp"
+        android:text="Button"
+        android:onClick="getSelectedImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.143"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

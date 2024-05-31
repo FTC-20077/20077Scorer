@@ -3,6 +3,7 @@ package com.example.myapplication;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
@@ -93,6 +94,8 @@ public class MainActivity extends AppCompatActivity {
     Switch blueairplanerobot2zone3;
     Switch redairplanerobot1zone3;
     Switch redairplanerobot2zone3;
+    String l = "@drawable/whitepixel";
+    private ImageView selectedImageView;
 
     // Counting
     private int blueBackdropPixels = 0;
@@ -161,6 +164,7 @@ public class MainActivity extends AppCompatActivity {
     private int redmajorpenaltiesscore = 0;
     private int blueminorpenaltiesscore = 0;
     private int redminorpenaltiesscore = 0;
+    private int selectedImageResource;
 
     //Declares current page
     private int currentPage = 0;
@@ -1037,6 +1041,7 @@ public class MainActivity extends AppCompatActivity {
         TextView totalScoreTextView = findViewById(R.id.redtotalscoreendgame);
         totalScoreTextView.setText(String.valueOf(totalredscoreendgame));
     }
+
     public void resetValues(){
         blueteamelelement1 = false;
         blueteamelelement2 = false;
