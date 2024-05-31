@@ -5,7 +5,7 @@
     android:id="@+id/endgame"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/centerstagebackground">
+    android:background="@drawable/centerstage_background_blank">
 
     <TextView
         android:id="@+id/hang"
