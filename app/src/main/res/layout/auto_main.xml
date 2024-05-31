@@ -6,7 +6,7 @@
     android:id="@+id/auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray">
+    android:background="@drawable/centerstagebackground">
 
 
     <TextView
@@ -568,6 +568,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="636dp"
+        android:backgroundTint="@color/gray"
         android:onClick="blueBackdropPixelAdd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.107"
@@ -580,6 +581,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="748dp"
+        android:backgroundTint="@color/gray"
         android:onClick="blueBackstagePixelAdd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.107"
@@ -592,6 +594,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="636dp"
+        android:backgroundTint="@color/gray"
         android:onClick="redBackdropPixelAdd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.628"
@@ -604,6 +607,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="748dp"
+        android:backgroundTint="@color/gray"
         android:onClick="redBackstagePixelAdd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.628"
@@ -616,6 +620,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="636dp"
+        android:backgroundTint="@color/gray"
         android:onClick="blueBackdropPixelSubtract"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.371"
@@ -628,6 +633,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="748dp"
+        android:backgroundTint="@color/gray"
         android:onClick="blueBackstagePixelSubtract"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.371"
@@ -640,6 +646,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="636dp"
+        android:backgroundTint="@color/gray"
         android:onClick="redBackdropPixelSubtract"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.892"
@@ -652,6 +659,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="748dp"
+        android:backgroundTint="@color/gray"
         android:onClick="redBackstagePixelSubtract"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.892"

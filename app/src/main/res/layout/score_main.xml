@@ -5,7 +5,7 @@
     android:id="@+id/score"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray">
+    android:background="@drawable/centerstagebackground">
 
 
     <TextView
@@ -28,29 +28,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/endgame"
-        android:layout_width="331dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="408dp"
-        android:backgroundTint="@color/blue"
-        android:fontFamily="@font/raleway_bold"
-        android:onClick="switchScreenToEndgame"
-        android:shadowColor="@color/darkblue"
-        android:shadowRadius="100"
-        android:text="Endgame"
-        android:textColor="@color/darkblue"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.426"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
         android:id="@+id/auto"
-        android:layout_width="333dp"
-        android:layout_height="72dp"
-        android:layout_marginTop="316dp"
+        android:layout_width="327dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="320dp"
         android:backgroundTint="@color/blue"
         android:fontFamily="@font/raleway_bold"
         android:onClick="switchScreenToAuto"
@@ -61,34 +42,15 @@
         android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.455"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/teleop"
-        android:layout_width="329dp"
-        android:layout_height="71dp"
-        android:layout_marginTop="496dp"
-        android:backgroundTint="@color/blue"
-        android:fontFamily="@font/raleway_bold"
-        android:onClick="switchScreenToTeleop"
-        android:shadowColor="@color/darkblue"
-        android:shadowRadius="100"
-        android:text="Tele-Op"
-        android:textColor="@color/darkblue"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.414"
+        app:layout_constraintHorizontal_bias="0.452"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/totalscorebutton"
-        android:layout_width="329dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="584dp"
+        android:layout_width="327dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="612dp"
         android:backgroundTint="@color/blue"
         android:fontFamily="@font/raleway_bold"
         android:onClick="switchScreenToTotalScore"
@@ -99,15 +61,15 @@
         android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.426"
+        app:layout_constraintHorizontal_bias="0.452"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/backbutton"
-        android:layout_width="329dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="664dp"
+        android:layout_width="327dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="708dp"
         android:backgroundTint="@color/blue"
         android:fontFamily="@font/raleway_bold"
         android:onClick="goBacktoMain"
@@ -118,7 +80,45 @@
         android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.426"
+        app:layout_constraintHorizontal_bias="0.452"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/endgame"
+        android:layout_width="327dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="516dp"
+        android:backgroundTint="@color/blue"
+        android:fontFamily="@font/raleway_bold"
+        android:onClick="switchScreenToEndgame"
+        android:shadowColor="@color/darkblue"
+        android:shadowRadius="100"
+        android:text="Endgame"
+        android:textColor="@color/darkblue"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.452"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/teleop"
+        android:layout_width="327dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="420dp"
+        android:backgroundTint="@color/blue"
+        android:fontFamily="@font/raleway_bold"
+        android:onClick="switchScreenToTeleop"
+        android:shadowColor="@color/darkblue"
+        android:shadowRadius="100"
+        android:text="Tele-Op"
+        android:textColor="@color/darkblue"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.452"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
