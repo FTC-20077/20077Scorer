@@ -928,7 +928,7 @@ public class MainActivity extends AppCompatActivity {
     public void updateAutoBlueBackstagePixels() {
         TextView totalScoreTextView = findViewById(R.id.bluebackstagecount);
         totalScoreTextView.setText(String.valueOf(blueBackstagePixels));
-        blueBackstageScore = blueBackstagePixels;
+        blueBackstageScore = blueBackstagePixels * 3;
         calculateAutoScores();
     }
 
@@ -956,14 +956,14 @@ public class MainActivity extends AppCompatActivity {
     public void updateTeleOpBlueBackstagePixels() {
         TextView totalScoreTextView = findViewById(R.id.bluebackstagecountteleop);
         totalScoreTextView.setText(String.valueOf(blueBackstagePixelsTeleOp));
-        blueBackstageScoreTeleOp = blueBackstagePixelsTeleOp * 3;
+        blueBackstageScoreTeleOp = blueBackstagePixelsTeleOp ;
         calculateTeleOpScores();
     }
 
     public void updateTeleOpRedBackstagePixels() {
         TextView totalScoreTextView = findViewById(R.id.redbackstagecountteleop);
         totalScoreTextView.setText(String.valueOf(redBackstagePixelsTeleOp));
-        redBackstageScoreTeleOp = redBackstagePixelsTeleOp * 3;
+        redBackstageScoreTeleOp = redBackstagePixelsTeleOp;
         calculateTeleOpScores();
     }
 
