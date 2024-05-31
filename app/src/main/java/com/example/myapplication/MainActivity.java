@@ -82,6 +82,10 @@ public class MainActivity extends AppCompatActivity {
         View view = findViewById(R.id.totalscore);
         Button button = (Button) v;
         setContentView(R.layout.totalscore_main);
+
+        calculateTotalScores();
+        updateTotalBlueScore();
+        updateTotalRedScore();
     }
 
     /* Scorer */
@@ -218,6 +222,10 @@ public class MainActivity extends AppCompatActivity {
         View view = findViewById(R.id.nextpagetototalscore);
         Button button = (Button) v;
         setContentView(R.layout.totalscore_main);
+
+        calculateTotalScores();
+        updateTotalBlueScore();
+        updateTotalRedScore();
     }
 
     public void goBackToScore(View v) {
@@ -274,16 +282,6 @@ public class MainActivity extends AppCompatActivity {
         updateEndgameRedScore();
         updateEndgameBlueScore();
     }
-
-    public void calculateScoreTotal(View v) {
-        View view = findViewById(R.id.calculatebutton);
-        Button button = (Button) v;
-        calculateTotalScores();
-        updateTotalRedScore();
-        updateTotalBlueScore();
-        v.setVisibility(View.INVISIBLE);
-    }
-
 
     public void teamElementChecker()
     {
