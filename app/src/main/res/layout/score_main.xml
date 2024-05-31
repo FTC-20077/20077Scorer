@@ -29,9 +29,9 @@
 
     <Button
         android:id="@+id/endgame"
-        android:layout_width="332dp"
-        android:layout_height="98dp"
-        android:layout_marginTop="572dp"
+        android:layout_width="331dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="408dp"
         android:backgroundTint="@color/blue"
         android:fontFamily="@font/raleway_bold"
         android:onClick="switchScreenToEndgame"
@@ -42,15 +42,15 @@
         android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.455"
+        app:layout_constraintHorizontal_bias="0.426"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/auto"
-        android:layout_width="332dp"
-        android:layout_height="98dp"
-        android:layout_marginTop="340dp"
+        android:layout_width="333dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="316dp"
         android:backgroundTint="@color/blue"
         android:fontFamily="@font/raleway_bold"
         android:onClick="switchScreenToAuto"
@@ -67,9 +67,9 @@
 
     <Button
         android:id="@+id/teleop"
-        android:layout_width="332dp"
-        android:layout_height="98dp"
-        android:layout_marginTop="456dp"
+        android:layout_width="329dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="496dp"
         android:backgroundTint="@color/blue"
         android:fontFamily="@font/raleway_bold"
         android:onClick="switchScreenToTeleop"
@@ -80,15 +80,34 @@
         android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.455"
+        app:layout_constraintHorizontal_bias="0.414"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/totalscorebutton"
+        android:layout_width="329dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="584dp"
+        android:backgroundTint="@color/blue"
+        android:fontFamily="@font/raleway_bold"
+        android:onClick="switchScreenToTotalScore"
+        android:shadowColor="@color/darkblue"
+        android:shadowRadius="100"
+        android:text="Total Score"
+        android:textColor="@color/darkblue"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.426"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/backbutton"
-        android:layout_width="332dp"
-        android:layout_height="98dp"
-        android:layout_marginTop="688dp"
+        android:layout_width="329dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="664dp"
         android:backgroundTint="@color/blue"
         android:fontFamily="@font/raleway_bold"
         android:onClick="goBacktoMain"
@@ -99,7 +118,7 @@
         android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.455"
+        app:layout_constraintHorizontal_bias="0.426"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
