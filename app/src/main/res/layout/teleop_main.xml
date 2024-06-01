@@ -247,17 +247,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:onClick="redBackdropPixelSubtract"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.895"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/minus_icon" />
-            <ImageButton
-        android:id="@+id/redbackdropsubtractteleop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
                 android:backgroundTint="@color/gray"
         android:onClick="redBackdropPixelSubtractTeleop"
         app:layout_constraintEnd_toEndOf="parent"
